@@ -237,22 +237,22 @@ body {
 
 /* Background images */
 #gallery-item-lizard {
-    background-image: url(/calango.jpg);
+    background-image: url(calango.jpg);
     order: -1;
 }
 
 #gallery-item-woman {
-    background-image: url(/mulher.jpg);
+    background-image: url(mulher.jpg);
 }
 
 #gallery-item-dog {
-    background-image: url(/cachorro.jpg);
+    background-image: url(cachorro.jpg);
 }
 
 #gallery-item-sea {
-    background-image: url(/mar.jpg);
+    background-image: url(mar.jpg);
 }
 
 #gallery-item-car {
-    background-image: url(/carro.jpg);
+    background-image: url(carro.jpg);
 }
