@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Uncial+Antiqua&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Navbar fixa esquerda */
+.main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100vh;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.toggle-icon-btn {
+    width: 90px;
+    height: 90px;
+    background-color: black;
+    margin-top: 0;
+    position: relative;
+}
+
+.navbar-toggle-icon {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 30px;
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+.navbar-social-links svg {
+    width: 20px;
+    height: 20px;
+    fill: black;
+    cursor: pointer;
+    transition: fill 0.3s;
+}
+
+.navbar-social-links svg:hover {
+    fill: #2f2eff;
+}
+
+/* Menu lateral */
+#sidebar-menu-toggle {
+    display: none;
+}
+
+.sidebar-panel {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#sidebar-menu-toggle:checked~.sidebar-panel {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-back-arrow {
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+    user-select: none;
+}
+
+.sidebar-logo {
+    color: #2f2eff;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.sidebar-nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+}
+
+.sidebar-nav-items li {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #aaa;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s;
+}
+.sidebar-nav-items a {
+    text-decoration: none;
+}
+
+.sidebar-nav-items li.is-active,
+.sidebar-nav-items li:hover {
+    color: #2f2eff;
+    font-weight: bold;
+}
+
+.sidebar-footer {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+.sidebar-footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.sidebar-footer-icons svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    cursor: pointer;
+    transition: fill 0.3s;
+}
+
+.sidebar-footer-icons svg:hover {
+    fill: #2f2eff;
+}
+
+/* Área das imagens */
+#main-image-gallery {
+    grid-column: 2 / 3;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.gallery-item {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    transition: flex-grow 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    flex-grow: 7;
+}
+
+.gallery-item .gallery-item-text {
+    position: absolute;
+    color: #fff;
+    top: 40%;
+    left: 5%;
+    opacity: 0;
+    transition: opacity 0.4s ease, bottom 0.4s ease;
+    font-size: 2rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.gallery-item:hover .gallery-item-text {
+    opacity: 1;
+    bottom: 35%;
+}
+
+.gallery-item-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.gallery-item-author img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.category-tag-people {
+    display: inline-block;
+    background-color: #fff;
+    color: #3a5bdc;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.gallery-item-text h2 {
+    text-align: left;
+    margin: 0;
+}
+
+/* Background images */
+#gallery-item-lizard {
+    background-image: url(/calango.jpg);
+    order: -1;
+}
+
+#gallery-item-woman {
+    background-image: url(/mulher.jpg);
+}
+
+#gallery-item-dog {
+    background-image: url(/cachorro.jpg);
+}
+
+#gallery-item-sea {
+    background-image: url(/mar.jpg);
+}
+
+#gallery-item-car {
+    background-image: url(/carro.jpg);
+}

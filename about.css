@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Uncial+Antiqua&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", system-ui, sans-serif;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100vh;
+    background-color: #111;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 10;
+}
+
+.nav-toggle-button-container {
+    width: 90px;
+    height: 90px;
+    background-color: black;
+    position: relative;
+}
+
+.navbar-toggle-icon {
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    margin-bottom: 30px;
+    user-select: none;
+}
+
+.navbar-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+}
+
+.navbar-social-links .social-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    cursor: pointer;
+    transition: fill 0.3s;
+}
+
+.navbar-social-links .social-icon:hover {
+    fill: #2f2eff;
+}
+
+/* Menu lateral */
+#sidebar-toggle {
+    display: none;
+}
+
+.sidebar-panel {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#sidebar-toggle:checked~.sidebar-panel {
+    left: 0;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-back-arrow {
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+    user-select: none;
+}
+
+.sidebar-logo {
+    color: #2f2eff;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.sidebar-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+}
+
+.sidebar-nav-list li {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #aaa;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s;
+}
+
+.sidebar-nav-list a {
+    text-decoration: none;
+}
+
+.sidebar-nav-list li.is-active,
+.sidebar-nav-list li:hover {
+    color: #2f2eff;
+    font-weight: bold;
+}
+
+.sidebar-footer {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+}
+
+.sidebar-footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.sidebar-footer-icons .social-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    cursor: pointer;
+    transition: fill 0.3s;
+}
+
+.sidebar-footer-icons .social-icon:hover {
+    fill: #2f2eff;
+}
+
+/* Seção principal "About" */
+#about-page-section { /* Renomeado de #about para evitar conflitos se #about for um id global */
+    grid-column: 2 / 3; /* Garante que a seção principal comece após a navbar lateral */
+}
+
+.about-blue-container {
+    background: #2f2eff;
+    width: 700px;
+    height: 400vh;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.about-blue-container img {
+    margin-top: 10vh;
+    margin-left: 20%;
+    border-radius: 50%;
+}
+
+.about-blue-container h1 {
+    font-size: 2.2em;
+    font-weight: 400;
+}
+
+.about-blue-container h1,
+.about-blue-container p { /* Alterado para targetar p dentro de about-blue-container */
+    text-align: left;
+    color: #fff;
+    margin-left: 15%;
+}
+
+.about-contact-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-contact-button { /* Renomeado de .container-blue button */
+    display: inline-block;
+    min-width: 160px;
+    padding: 9px 10px;
+    margin-left: 15%;
+    background: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.about-email-link { /* Renomeado de .container-blue a */
+    color: #fff;
+    font-style: italic;
+    font-weight: 400;
+    text-decoration: none; /* Adicionado para garantir que links não tenham underline por padrão */
+}
+
+.about-white-container {
+    width: 700px;
+    height: 300vh;
+    background-color: #fff;
+    margin-left: 780%;
+    position: relative;
+    top: -50%;
+}
+
+.about-white-container h2 {
+    padding-left: 5%;
+    padding-top: 15%;
+    font-weight: 500;
+    color: #000;
+    font-size: 2.5em;
+    text-underline-offset: 10px;
+    text-decoration: #2f2eff underline;
+}
+
+.about-white-container p {
+    display: flex;
+    margin: 20px;
+    font-size: 15px;
+    justify-content: left;
+    text-align: left;
+    color: #777;
+}
+
+.about-skills-section {
+    width: 80%;
+    position: relative;
+    top: -75%;
+    margin-left: 800%;
+    padding: 50px 0;
+}
+
+.about-skills-section h2 {
+    font-size: 32px;
+    border-bottom: 2px solid #2f2eff;
+    display: inline-block;
+    text-wrap: nowrap;
+}
+
+.about-skills-list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.about-skill-item {
+    text-align: center;
+}
+
+.skill-circular-chart { /* Renomeado de .circular-chart */
+    display: block;
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.skill-circle-bg { /* Renomeado de .circle-bg */
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+}
+
+.skill-circle-progress { /* Renomeado de .circle */
+    fill: none;
+    stroke-width: 3.8;
+    stroke: #2f2eff;
+    stroke-linecap: round;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.skill-percentage-text { /* Renomeado de .percentage */
+    fill: #333;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.5em;
+    text-anchor: middle;
+}
+
+.about-skill-item p { /* Renomeado de .skill p */
+    font-size: 16px;
+    color: #000;
+    margin-top: 10px;
+}
